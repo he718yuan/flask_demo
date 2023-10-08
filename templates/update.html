@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}修改页面{% endblock %}
+{% block head %}
+{% endblock %}
+{% block body %}
+<form action="#" method="post">
+    <table cellpadding="2" align="center">
+        <tr>
+            <td align="right">姓名:</td>
+            <td>
+                <!---文本输入框件---->
+                <input type="text" value="{{user.username}}" default="{{user.username}}" name="username" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">性别:</td>
+            <td>
+                <!----文本输入框件--->
+                <input type="text" value="{{user.sex}}" default="{{user.sex}}" name="sex" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">电话:</td>
+            <td>
+                <!---文本输入框件--->
+                <input type="number" value="{{user.tel}}" default="{{user.tel}}" name="tel" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">住宿时间:</td>
+            <td>
+                <!---文本输入框件--->
+                <input type="number" value="{{user.live}}" default="{{user.live}}" name="tel" />
+            </td>
+        </tr>
+         <tr>
+            <td align="center" colspan="2" rowspan="center">
+            <!--提交按钮--->
+                <input type="submit" value="确认修改" />
+            </td>
+        </tr>
+
+    </table>
+</form>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+    {% block title %}酒店管理系统-首页{% endblock %}
+
+    {% block head %}
+    {% endblock %}
+
+{% block body %}
+
+<div class="row" style="margin-top: 20px;">
+            <div class="col"></div>
+            <div class="col-10">
+                <ul class="question-ul">
+                <table border="1" width="90%" align="center" cellspacing="7"style="font-size: 18px">
+                    <tr>
+                        <td>姓名</td>
+                        <td>性别</td>
+                        <td>电话</td>
+                        <td>住宿时间</td>
+                        <td>加入时间</td>
+                        <td>操作</td>
+
+                    </tr>
+
+                    {% for user in users %}
+
+                    <tr>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.sex }}</td>
+                        <td>{{ user.tel }}</td>
+                        <td>{{ user.live }}</td>
+                        <td>{{ user.join_time }}</td>
+                        <td>
+                            <a href="{{url_for('qa.qa_delete',qa_id=user.id)}}" >删除</a>
+                            <a href="{{url_for('qa.qa_update',qa_id=user.id)}}" >修改</a>
+
+                        </td>
+
+
+
+                    </tr>
+                    {% endfor %}
+                   </table>
+
+
+                </ul>
+            </div>
+            <div class="col"></div>
+        </div>
+{% endblock %}
